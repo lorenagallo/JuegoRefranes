@@ -1,1 +1,33 @@
 
+#include <iostream>
+using namespace std;
+
+void mostrarRefranIncompleto(int n){
+
+}
+
+void mostrarRefranCompleto(int n){
+
+}
+
+void obtenerRespuesta(){
+
+}
+
+void compararRespuesta(string respuesta){
+
+}
+
+void mostrarSignificado(int n){
+
+}
+
+void menuPrograma(){
+
+}
+
+int main() {
+
+    cout << "Hello, World!" << endl;
+    return 0;
+}
