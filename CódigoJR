@@ -24,6 +24,20 @@ void mostrarSignificado(int n){
 
 void menuPrograma(){
 
+    cout << "******************************************" << endl;
+    cout << "*                                        *" << endl;
+    cout << "*    Bienvenidos al juego de refranes:   *" << endl;
+    cout << "*                                        *" << endl;
+    cout << "******************************************" << endl;
+    cout << "Ingrese el número de la opción que desea utilizar:" << endl;
+
+    cout << "(1) Jugar a completar refranes." << endl; 
+    cout << "(2) Mostrar resultados anteriores. << endl;
+    cout << "(3) Salir" << endl;
+  
+    cout << "Ingrese el número: << endl;
+    int opc = 0;
+    cin >> opc;
 }
 
 int main() {
