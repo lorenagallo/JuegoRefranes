@@ -36,12 +36,33 @@ void menuPrograma(){
     cout << "(3) Salir" << endl;
   
     cout << "Ingrese el número: << endl;
-    int opc = 0;
-    cin >> opc;
 }
 
 int main() {
 
-    cout << "Hello, World!" << endl;
+    bool Quit = false;
+    char opc = 'z';
+
+    menuPrograma();
+    cin >> opc;
+    
+    switch (opc) {
+            case '1':
+                cout << "REFRAN INCOMPLETO FUNCION";
+
+            case '2':
+                 //RESULTADOS
+                 break;
+
+            case '5': //user wants to quit
+                 Quit = true;  //execution continues after the switch
+                  //or do this to end program
+                 return 0;
+                 break;
+
+            default:
+                  std::cout << "Bad Input, Try again " << std::endl;
+                  break;
+     }  
     return 0;
 }
