@@ -1,6 +1,8 @@
-
 #include <iostream>
 #include <stdlib.h>
+#include <iostream>
+#include <stdlib.h>
+
 using namespace std;
 
 string ri1="A buen hambre, ";
@@ -14,10 +16,19 @@ string re3="grandes remedios.";
 string re4="oídos sordos.";
 string re5="Dios le ayuda.";
 
-string respuesta='';
+string respuesta;
 int jugo;
 
 int cpuntos = 0;
+
+string r1;
+string r2;
+string r3;
+string r4;
+string r5;
+string respusu;
+string resp;
+string releg;
 
 void mostrarRefranIncompleto(){
     
@@ -25,20 +36,25 @@ void mostrarRefranIncompleto(){
     x = rand()%5 + 1;
     
     if (x == 1) {
-    cout << r1 << endl;
+        releg = ri1;
+    cout << releg << endl;
     }
     else if (x == 2) {
-    cout << r2 << endl;
+        releg = ri2;
+    cout << releg << endl;
     }
     else if (x == 3) {
-    cout << r3 << endl;
+        releg = ri3;
+    cout << releg << endl;
     }
     else if (x == 4) {
-    cout << r4 << endl;
+        releg = ri4;
+    cout << releg << endl;
     }
     else if (x == 5) {
-    cout << r5 << endl;
-    }
+        releg = ri5;
+    cout << releg << endl;
+    } 
 }
 
 void mostrarRefranCompleto(int n){
@@ -51,29 +67,29 @@ void mostrarRefranCompleto(int n){
 
 }
 
-void obtenerRespuesta(){
+void obtenerRespuesta(string refran){
     
-    if (refran == ri1){
-    resp = re1
+    if (releg == ri1){
+    resp = re1;
     }
-    else if (refran == ri2){
-    resp = re2
+    else if (releg == ri2){
+    resp = re2;
     }
-    else if (refran == ri3){
-    resp = re3
+    else if (releg == ri3){
+    resp = re3;
     }
-    else if (refran == ri4){
-    resp = re4
+    else if (releg == ri4){
+    resp = re4;
     }
-    else if (refran == ri5){
-    resp = r5
+    else if (releg == ri5){
+    resp = r5;
     }
 }
 
 void compararRespuesta(string respuesta){
   
     if (resp == respusu){
-        cout << Excelente, usted ha ganado 1 punto. << endl;
+        cout << "Excelente, usted ha ganado 1 punto." << endl;
         cpuntos = cpuntos + 1;
     }
     else{
@@ -82,13 +98,13 @@ void compararRespuesta(string respuesta){
 
 }
 
-void mostrarSignificado(int n){
+void mostrarSignificado(){
 
-    s1 = "Cuando tienes hambre de verdad o una necesidad, no te pones selectivo con la comida o los gustos.";
-    s2 = "A una persona que dice mentiras se le reconoce enseguida, antes que a un cojo corriendo.";
-    s3 = "Cuando se te presenten males, busca los mejores remedios";
-    s4 = "Cuando no quieras escuchar palabras que no te gustan, no las escuches.";
-    s5 = "Quien despierta temprano será ayudado por Dios.";
+    string s1 = "Cuando tienes hambre de verdad o una necesidad, no te pones selectivo con la comida o los gustos.";
+    string s2 = "A una persona que dice mentiras se le reconoce enseguida, antes que a un cojo corriendo.";
+    string s3 = "Cuando se te presenten males, busca los mejores remedios";
+    string s4 = "Cuando no quieras escuchar palabras que no te gustan, no las escuches.";
+    string s5 = "Quien despierta temprano será ayudado por Dios.";
 
 }
 
@@ -102,10 +118,10 @@ void menuPrograma(){
     cout << "Ingrese el número de la opción que desea utilizar:" << endl;
 
     cout << "(1) Jugar a completar refranes." << endl; 
-    cout << "(2) Mostrar resultados anteriores. << endl;
+    cout << "(2) Mostrar resultados anteriores." << endl;
     cout << "(3) Salir" << endl;
   
-    cout << "Ingrese el número: << endl;
+    cout << "Ingrese el número: " << endl;
 }
 
 int main() {
@@ -123,10 +139,10 @@ int main() {
         switch (opc) {
             case 1:
                 
-                bool repeat = true;
-                while (repeat = true){
+                bool repeat1 = true;
+                while (repeat1 = true){
                 
-                    refran = mostrarRefranIncompleto();
+                    mostrarRefranIncompleto();
                     cout << "Ingrese 1 si desea jugar 2 si desea omitir el refrán y ver otro: " << endl;
                     cin >> jugo;
 
@@ -134,27 +150,26 @@ int main() {
                     switch (jugo) {
                         case 1:
 
-                            int respusu;
                             cout << "Ingrese su respuesta: " << endl;
 
                             cin >> respusu;
                             compararRespuesta(respusu);
-                            }
                             break;
 
                         case '2':
-                            //OTRO REFRAN INCOMPLETO
-                        
+                            repeat1 = false;
+                    }                        
                 }
             case 2:
-                 //RESULTADOS
+                 cout << cpuntos <<endl;
                  break;
 
-            case 3: // quit
-                 repeat = falsse;
+            case 3: 
+                 repeat = false;
 
      
         }
-        return 0;
+        
     }
+    return 0;
 }
