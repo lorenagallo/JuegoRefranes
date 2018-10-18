@@ -4,9 +4,21 @@ using namespace std;
 
 void mostrarRefranIncompleto(int n){
 
+    r1="";
+    r2="";
+    r3="";
+    r4="";
+    r5="";
+
 }
 
 void mostrarRefranCompleto(int n){
+
+    r1="";
+    r2="";
+    r3="";
+    r4="";
+    r5="";
 
 }
 
@@ -40,6 +52,7 @@ void menuPrograma(){
 
 int main() {
 
+    char jugo = 'z';
     bool Quit = false;
     char opc = 'z';
 
@@ -48,7 +61,27 @@ int main() {
     
     switch (opc) {
             case '1':
-                cout << "REFRAN INCOMPLETO FUNCION";
+                cout << "REFRAN INCOMPLETO FUNCION" << endl;
+                cout << "Ingrese 1 si desea jugar 2 si desea omitir el refrán y ver otro: " << endl;
+                cin >> jugo;
+                
+                switch (jugo) {
+                    case '1':
+                        cout << "Ingrese su respuesta: " << endl;
+                        if(//correcta){
+                        Excelente, usted ha ganado 1 punto.
+                        }
+                        cout << "Ingrese el número de la opción que desea utilizar:
+
+                        cout << "(1) Jugar a completar refranes. << endl;
+                        cout << "(2) Mostrar resultados anteriores." << endl;
+                        cout << "(3) Salir" << endl;
+                        
+                    case '2':
+                        //OTRO REFRAN INCOMPLETO
+                    default:
+                        std::cout << "Bad Input, Try again " << std::endl;
+                        break;
 
             case '2':
                  //RESULTADOS
