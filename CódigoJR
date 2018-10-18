@@ -17,7 +17,7 @@ string re4="oídos sordos.";
 string re5="Dios le ayuda.";
 
 string respuesta;
-int jugo;
+char jugo='z';
 
 int cpuntos = 0;
 
@@ -138,38 +138,40 @@ int main() {
         //MENU
         switch (opc) {
             case 1:
-                
-                bool repeat1 = true;
-                while (repeat1 = true){
-                
-                    mostrarRefranIncompleto();
-                    cout << "Ingrese 1 si desea jugar 2 si desea omitir el refrán y ver otro: " << endl;
-                    cin >> jugo;
-
-                    //MENU JUGO
-                    switch (jugo) {
-                        case 1:
-
-                            cout << "Ingrese su respuesta: " << endl;
-
-                            cin >> respusu;
-                            compararRespuesta(respusu);
-                            break;
-
-                        case '2':
-                            repeat1 = false;
-                    }                        
+                {
+                    bool quit = false;
+                    while (quit = false){
+                    
+                        mostrarRefranIncompleto();
+                        cout << "Ingrese a si desea jugar y b si desea omitir el refrán y ver otro: " << endl;
+                        cin >> jugo;
+    
+                        //MENU JUGO
+                        switch (jugo) {
+                            case '1':
+                                {
+                                    cout << "Ingrese su respuesta: " << endl;
+        
+                                    cin >> respusu;
+                                    compararRespuesta(respusu);
+                                    break;
+                                }
+                            case '2':
+                                quit = true;
+                        }                        
+                    }
+                    break;
                 }
             case 2:
-                 cout << cpuntos <<endl;
-                 break;
+                {
+                     cout << cpuntos <<endl;
+                     break;
+                }
 
             case 3: 
                  repeat = false;
-
      
         }
         
     }
     return 0;
-}
