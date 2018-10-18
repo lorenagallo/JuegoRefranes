@@ -59,14 +59,17 @@ void menuPrograma(){
 int main() {
 
     char jugo = 'z';
-    bool Quit = false;
+    bool repeat = true;
     char opc = 'z';
-
+    while (repeat = true){
+   
     menuPrograma();
+    
     cin >> opc;
     
     switch (opc) {
             case '1':
+                nested()
                 cout << "REFRAN INCOMPLETO FUNCION" << endl;
                 cout << "Ingrese 1 si desea jugar 2 si desea omitir el refrán y ver otro: " << endl;
                 cin >> jugo;
@@ -103,5 +106,6 @@ int main() {
                   std::cout << "Bad Input, Try again " << std::endl;
                   break;
      }  
+     }
     return 0;
 }
