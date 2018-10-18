@@ -1,7 +1,5 @@
 #include <iostream>
 #include <stdlib.h>
-#include <iostream>
-#include <stdlib.h>
 
 using namespace std;
 
@@ -10,11 +8,11 @@ string ri2="Antes se coge al mentiroso ";
 string ri3="A grandes males, ";
 string ri4="A palabras necias, ";
 string ri5="A quien madruga, ";
-string re1="no hay pan duro.";
+string re1="no hay pan duro";
 string re2="que al cojo";
-string re3="grandes remedios.";
-string re4="oídos sordos.";
-string re5="Dios le ayuda.";
+string re3="grandes remedios";
+string re4="oidos sordos";
+string re5="dios le ayuda";
 
 string respuesta;
 char jugo='z';
@@ -139,11 +137,11 @@ int main() {
         switch (opc) {
             case 1:
                 {
-                    bool quit = false;
-                    while (quit = false){
+                    bool repeat1 = true;
+                    while (repeat1 = true){
                     
                         mostrarRefranIncompleto();
-                        cout << "Ingrese a si desea jugar y b si desea omitir el refrán y ver otro: " << endl;
+                        cout << "Ingrese 1 si desea jugar y 2 si desea omitir el refrán y ver otro: " << endl;
                         cin >> jugo;
     
                         //MENU JUGO
@@ -157,7 +155,7 @@ int main() {
                                     break;
                                 }
                             case '2':
-                                quit = true;
+                                repeat1 = false;
                         }                        
                     }
                     break;
@@ -175,3 +173,4 @@ int main() {
         
     }
     return 0;
+}
