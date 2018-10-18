@@ -4,21 +4,21 @@ using namespace std;
 
 void mostrarRefranIncompleto(int n){
 
-    r1="";
-    r2="";
-    r3="";
-    r4="";
-    r5="";
+    r1="A buen hambre, ";
+    r2="Antes se coge al mentiroso ";
+    r3="A grandes males, ";
+    r4="A palabras necias, ";
+    r5="A quien madruga, ";
 
 }
 
 void mostrarRefranCompleto(int n){
 
-    r1="";
-    r2="";
-    r3="";
-    r4="";
-    r5="";
+    r1="A buen hambre, no hay pan duro.";
+    r2="Antes se coge al mentiroso que al cojo";
+    r3="A grandes males, grandes remedios.";
+    r4="A palabras necias, oídos sordos.";
+    r5="A quien madruga, Dios le ayuda.";
 
 }
 
@@ -31,6 +31,12 @@ void compararRespuesta(string respuesta){
 }
 
 void mostrarSignificado(int n){
+
+    s1="Cuando tienes hambre de verdad o una necesidad, no te pones selectivo con la comida o los gustos.";
+    s2="A una persona que dice mentiras se le reconoce enseguida, antes que a un cojo corriendo.";
+    s3="Cuando se te presenten males, busca los mejores remedios";
+    s4="Cuando no quieras escuchar palabras que no te gustan, no las escuches.";
+    s5="Quien despierta temprano será ayudado por Dios.";
 
 }
 
