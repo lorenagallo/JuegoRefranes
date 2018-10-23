@@ -8,90 +8,102 @@ string ri2="Antes se coge al mentiroso ";
 string ri3="A grandes males, ";
 string ri4="A palabras necias, ";
 string ri5="A quien madruga, ";
-string re1="no hay pan duro";
-string re2="que al cojo";
-string re3="grandes remedios";
-string re4="oidos sordos";
-string re5="dios le ayuda";
+
+string re1="no_hay_pan_duro";
+string re2="que_al_cojo";
+string re3="grandes_remedios";
+string re4="oidos_sordos";
+string re5="dios_le_ayuda";
 
 string respuesta;
 char jugo='z';
 
 int cpuntos = 0;
 
-string r1;
-string r2;
-string r3;
-string r4;
-string r5;
+string r1 = "A buen hambre, no hay pan duro";
+string r2 = "Antes se coge al mentiroso que al cojo";
+string r3 = "A grandes males, grandes remedios";
+string r4 = "A palabras necias, oidos sordos";
+string r5 = "A quien madruga, dios le ayuda";
 string respusu;
 string resp;
 string releg;
+int x = 0;
+int s = 0;
 
-void mostrarRefranIncompleto(){
-    
-    int x = 0;
-    x = rand()%5 + 1;
-    
-    if (x == 1) {
+void mostrarRefranIncompleto(int y){
+
+    if (y == 1) {
         releg = ri1;
-    cout << releg << endl;
+        cout << releg << endl;
     }
-    else if (x == 2) {
+    else if (y == 2) {
         releg = ri2;
-    cout << releg << endl;
+        cout << releg << endl;
     }
-    else if (x == 3) {
+    else if (y == 3) {
         releg = ri3;
-    cout << releg << endl;
+        cout << releg << endl;
     }
-    else if (x == 4) {
+    else if (y == 4) {
         releg = ri4;
-    cout << releg << endl;
+        cout << releg << endl;
     }
-    else if (x == 5) {
+    else if (y == 5) {
         releg = ri5;
-    cout << releg << endl;
-    } 
-}
-
-void mostrarRefranCompleto(int n){
-
-    r1 = ri1 + re1;
-    r2 = ri2 + re2;
-    r3 = ri3 + re3;
-    r4 = ri4 + re4;
-    r5 = ri5 + re5;
-
-}
-
-void obtenerRespuesta(string refran){
-    
-    if (releg == ri1){
-    resp = re1;
-    }
-    else if (releg == ri2){
-    resp = re2;
-    }
-    else if (releg == ri3){
-    resp = re3;
-    }
-    else if (releg == ri4){
-    resp = re4;
-    }
-    else if (releg == ri5){
-    resp = r5;
+        cout << releg << endl;
     }
 }
 
-void compararRespuesta(string respuesta){
-  
-    if (resp == respusu){
+void mostrarRefranCompleto(int y){
+
+    if (y == 1){
+        cout << r1 << endl;
+    }
+    else if (y == 2){
+        cout << r2 << endl;
+    }
+    else if (y == 3){
+        cout << r3 << endl;
+    }
+    else if (y == 4){
+        cout << r4 << endl;
+    }
+    else if (y == 5){
+        cout << r5 << endl;
+    }
+}
+
+void obtenerRespuesta(int y, string &RESPU){
+
+    if (y == 1){
+        RESPU = re1;
+    }
+    else if (y == 2){
+        RESPU = re2;
+    }
+    else if (y == 3){
+        RESPU = re3;
+    }
+    else if (y == 4){
+        RESPU = re4;
+    }
+    else if (y == 5){
+        RESPU = re5;
+    }
+}
+
+void compararRespuesta(string RESPU, string respuesta){
+
+    if (RESPU == respuesta){
         cout << "Excelente, usted ha ganado 1 punto." << endl;
         cpuntos = cpuntos + 1;
     }
-    else{
+    else if(RESPU != respuesta){
         cout << "Respuesta incorrecta" << endl;
+
+        cout << "La respuesta correcta será: " << endl;
+        mostrarRefranCompleto(x);
     }
 
 }
@@ -115,10 +127,10 @@ void menuPrograma(){
     cout << "******************************************" << endl;
     cout << "Ingrese el número de la opción que desea utilizar:" << endl;
 
-    cout << "(1) Jugar a completar refranes." << endl; 
+    cout << "(1) Jugar a completar refranes." << endl;
     cout << "(2) Mostrar resultados anteriores." << endl;
     cout << "(3) Salir" << endl;
-  
+
     cout << "Ingrese el número: " << endl;
 }
 
@@ -126,9 +138,9 @@ int main() {
 
     bool repeat = true;
     while (repeat = true){
-        
+
         int opc;
-        
+
         menuPrograma();
 
         cin >> opc;
@@ -136,41 +148,44 @@ int main() {
         //MENU
         switch (opc) {
             case 1:
-                {
-                    bool repeat1 = true;
-                    while (repeat1 = true){
-                    
-                        mostrarRefranIncompleto();
-                        cout << "Ingrese 1 si desea jugar y 2 si desea omitir el refrán y ver otro: " << endl;
-                        cin >> jugo;
-    
-                        //MENU JUGO
-                        switch (jugo) {
-                            case '1':
-                                {
-                                    cout << "Ingrese su respuesta: " << endl;
-        
-                                    cin >> respusu;
-                                    compararRespuesta(respusu);
-                                    break;
-                                }
-                            case '2':
-                                repeat1 = false;
-                        }                        
+            {
+                bool repeat1 = true;
+                while (repeat1 = true){
+                    cout << "Ingrese 1 si desea jugar o 2 si desea salir: " << endl;
+                    cin >> jugo;
+
+                    //MENU JUGO
+                    switch (jugo) {
+                        case '1':
+                        {
+                            cout << "Para elegir un refrán, escriba un número del 1 al 5: " << endl;
+                            cin >> x;
+                            mostrarRefranIncompleto(x);
+                            cout << "Ingrese su respuesta con guines bajos en vez de espacios: " << endl;
+
+                            cin >> respusu;
+                            string r;
+                            obtenerRespuesta(x, r);
+                            compararRespuesta(r, respusu);
+
+                            break;
+                        }
+
+                        case '2':
+                            break;
                     }
                     break;
                 }
-            case 2:
-                {
-                     cout << cpuntos <<endl;
-                     break;
-                }
 
-            case 3: 
-                 repeat = false;
-     
+            }
+            case 2:
+            {
+                cout << cpuntos <<endl;
+                break;
+            }
+
+            case 3:
+                s=1;
+
         }
-        
-    }
-    return 0;
-}
+        if (s==1)break;
